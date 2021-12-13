@@ -1,0 +1,73 @@
+// @function tamañoVariable($dimesion1: 100px, $dimesion2: 100px){
+//     $tamañoEstandar: (width: $dimesion1, height: $dimesion2);
+//     $tamañoEstandar: map-merge($tamañoEstandar, (background: red));
+//     @return $tamañoEstandar;
+// }
+
+// .container{
+//     @each $id, $value in tamañoVariable(100px, 600px) {
+//         #{$id}: #{$value};
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$color-fondo: red;
+$tamaño: (width: 300px, height: 600px);
+$listaBordes: (5px solid green, 10px double blue);
+$listaBordes: append($listaBordes, 3px groove yellow);
+
+$listaBordes: set-nth($listaBordes, 1, "Miguel");
+.container{
+    // posiscionDeLaLista: index($listaBordes, 3px groove yellow);
+    // @each $var in $listaBordes {
+    //     border: #{$var};
+    // }
+
+    
+
+
+
+
+
+
+    // $tamaño: map-remove($tamaño, width, height);
+
+
+
+
+
+
+
+
+    @each $id,$value in  map-merge($tamaño, (background-color: $color-fondo)) {
+        #{$id}: #{$value};
+    }
+    border: nth($listaBordes, 2);
+    @each $id,$value in $tamaño {
+        #{$id}: #{$value};
+    }
+}
